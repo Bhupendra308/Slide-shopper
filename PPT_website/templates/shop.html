@@ -1,0 +1,94 @@
+{% extends "common.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/css/shop.css">
+    <script src="{{ url_for('static', filename='js/loadHead.js') }}" defer></script>
+    <script src="/static/js/navbar.js" defer></script>
+    <script src="/static/js/shop.js" defer></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <!-- Repeat for more products -->
+            <div class="product" onclick="showProductDetails('ppt1')">
+                <img src="/static/images/ppt1.jpg
+                " alt="PPT 1">
+                <h3>PPT Title 1</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt2')">
+                <img src="/static/images/ppt2.jpg" alt="PPT 2">
+                <h3>PPT Title 2</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt3')">
+                <img src="/static/images/ppt3.jpg" alt="PPT 3">
+                <h3>PPT Title 3</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt4')">
+                <img src="/static/images/ppt4.jpg" alt="PPT 4">
+                <h3>PPT Title 4</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt5')">
+                <img src="/static/images/ppt5.jpg" alt="PPT 5">
+                <h3>PPT Title 5</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt6')">
+                <img src="/static/images/ppt6.jpg" alt="PPT 6">
+                <h3>PPT Title 6</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt7')">
+                <img src="/static/images/ppt7.jpg" alt="PPT 7">
+                <h3>PPT Title 7</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt8')">
+                <img src="/static/images/ppt8.jpg" alt="PPT 8">
+                <h3>PPT Title 8</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt9')">
+                <img src="/static/images/ppt9.jpg" alt="PPT 9">
+                <h3>PPT Title 9</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt10')">
+                <img src="/static/images/ppt10.jpg" alt="PPT 10">
+                <h3>PPT Title 10</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt11')">
+                <img src="/static/images/ppt11.jpg" alt="PPT 11">
+                <h3>PPT Title 11</h3>
+            </div>
+            <div class="product" onclick="showProductDetails('ppt12')">
+                <img src="/static/images/ppt12.jpg" alt="PPT 12">
+                <h3>PPT Title 12</h3>
+            </div>
+        </div>
+        <p>For custom PPT creation according to your theme, please fill out the <a href="https://forms.gle/YVbaUVbc6Yv6SPXu7" target="_blank" class="custom-link">Google Form</a>.</p>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="product-details" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetails()">&times;</span>
+            <h2 id="product-title"></h2>
+            <p id="product-theme"></p>
+            <p id="product-description"></p>
+            <button onclick="showPurchaseForm()">Book Now</button>
+        </div>
+    </div>
+
+    <!-- Purchase Form Modal -->
+    <div id="purchase-form" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePurchaseForm()">&times;</span>
+            <form id="purchase-form-details">
+                <input type="hidden" id="ppt-id" name="pptId">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
