@@ -5,7 +5,7 @@ from datetime import datetime
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'Bhupendra.2004',
+    'password': 'Password',
     'database': 'ppt_store'
 }
 
@@ -34,3 +34,4 @@ def store_contact(name, email, message):
     conn.commit()
     cursor.close()
     conn.close()
+
