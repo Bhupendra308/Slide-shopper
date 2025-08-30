@@ -1,0 +1,130 @@
+/* =========================
+   General Body Styling
+========================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   Navbar
+========================= */
+.navbar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+}
+
+/* =========================
+   Links
+========================= */
+a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Custom Buttons
+========================= */
+.btn-custom {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 25px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* =========================
+   Page Headings
+========================= */
+h1, h2, h3 {
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+/* =========================
+   About Page
+========================= */
+.about {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* =========================
+   Forms (Login/Register)
+========================= */
+.form-box {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* =========================
+   Cards (Shop/Dashboard)
+========================= */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   Social Media Links
+========================= */
+.social-link {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #343a40;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    background: #007bff;
+    color: #fff;
+}

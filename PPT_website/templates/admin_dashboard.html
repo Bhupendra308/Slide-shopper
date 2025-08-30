@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<div class="form-box">
+    <form action="{{ url_for('admin_dashboard') }}" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">PPT Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price (₹)</label>
+            <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="file" class="form-label">PPT File</label>
+            <input type="file" class="form-control" id="file" name="file" accept=".ppt,.pptx" required>
+        </div>
+
+        <button type="submit" class="btn btn-custom">Upload PPT</button>
+    </form>
+</div>
+
+<hr>
+
+<h3>Uploaded PPTs</h3>
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-3">
+        <div class="card p-3">
+            <h5>{{ product.title }}</h5>
+            <p>{{ product.description }}</p>
+            <small><b>File:</b> {{ product.filename }}</small><br>
+            <small><b>Price:</b> ₹{{ product.price }}</small><br>
+            <small><b>Size:</b> {{ (product.file_size / 1024)|round(2) }} KB</small>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

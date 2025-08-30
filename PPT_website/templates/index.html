@@ -1,18 +1,8 @@
-<!-- templates/index.html -->
-{% extends "common.html" %}
-
-{% block head %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-<script src="{{ url_for('static', filename='js/loadHead.js') }}" defer></script>
-{% endblock %}
-
+{% extends "base.html" %}
 {% block content %}
-    <div class="hero">
-        <h2>Welcome to SlideShopper</h2>
-        <p>Browse and buy high-quality PowerPoint presentations. We offer a wide range of professional and custom PPTs designed to meet your needs.</p>
-    </div>
-
-    <div class="container">
-        <p>Explore our collection of pre-designed PowerPoint presentations and find the perfect fit for your project. If you need something more specific, feel free to visit our Shop page.</p>
-    </div>
+<div class="text-center">
+  <h1>Welcome to Slide Shopper</h1>
+  <p class="lead">Your one-stop shop for professional presentations</p>
+  <a href="/shop" class="btn btn-primary btn-lg">Shop Now</a>
+</div>
 {% endblock %}

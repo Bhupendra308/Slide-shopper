@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ user.username }}</h2>
+
+<hr>
+
+<h3>Your Cart</h3>
+{% if cart_items|length == 0 %}
+  <p>Your cart is empty.</p>
+{% else %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart_items %}
+      <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>₹{{ item.price }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="{{ url_for('place_order') }}" class="btn btn-success">Place Order</a>
+{% endif %}
+
+<hr>
+
+<h3>Order History</h3>
+{% if orders|length == 0 %}
+  <p>You have not placed any orders yet.</p>
+{% else %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Ordered At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.product.title }}</td>
+        <td>{{ order.product.description }}</td>
+        <td>₹{{ order.product.price }}</td>
+        <td>{{ order.created_at.strftime('%d %b %Y, %H:%M') }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+{% endblock %}

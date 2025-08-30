@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Register</h2>
+<form method="POST" class="needs-validation" novalidate>
+ <!-- Username -->
+<div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username" name="username" required minlength="3">
+    <div class="invalid-feedback">Username must be at least 3 characters.</div>
+</div>
+
+
+  <!-- Email -->
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" required>
+    <div class="invalid-feedback">Please enter a valid email address.</div>
+  </div>
+
+  <!-- Password -->
+  <div class="mb-3 position-relative">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" name="password" required>
+    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('password','pass-icon')">
+        <i id="pass-icon" class="bi bi-eye"></i>
+    </span>
+  </div>
+
+  <!-- Confirm Password -->
+  <div class="mb-3 position-relative">
+    <label for="confirm_password" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+    <span class="position-absolute top-50 end-0 translate-middle-y me-3" style="cursor:pointer;" onclick="togglePassword('confirm_password','confirm-pass-icon')">
+        <i id="confirm-pass-icon" class="bi bi-eye"></i>
+    </span>
+  </div>
+
+  <button type="submit" class="btn btn-success">Register</button>
+</form>
+{% endblock %}
