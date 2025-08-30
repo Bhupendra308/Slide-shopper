@@ -71,7 +71,7 @@ class Contact(db.Model):
 def init_db(app):
     """Initialize the SQLAlchemy database with Flask app."""
     # Example MySQL connection
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Bhupendra.2004@localhost/ppt_store'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://user:password@localhost/ppt_store'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
@@ -154,3 +154,4 @@ def store_contact(name, email, message):
     contact = Contact(name=name, email=email, message=message)
     db.session.add(contact)
     db.session.commit()
+
